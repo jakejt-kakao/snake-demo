@@ -145,17 +145,23 @@ button:hover {
   gap: 8px;
   justify-content: center;
   align-items: center;
+  grid-template-columns: repeat(3, 48px);
 }
 
 .pad-row {
   display: grid;
   grid-template-columns: repeat(3, 48px);
   gap: 8px;
+  grid-column: 1 / -1;
 }
 
 .pad-btn {
   width: 48px;
   height: 48px;
+}
+
+.pad > .pad-btn {
+  grid-column: 2;
 }
 
 @media (min-width: 768px) {
