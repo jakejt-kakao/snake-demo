@@ -1,0 +1,165 @@
+:root {
+  --bg: #0f1115;
+  --panel: #161a22;
+  --grid: #222836;
+  --snake: #45d07d;
+  --food: #f05454;
+  --text: #e6e6e6;
+  --muted: #9aa3b2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top, #1b2030, #0f1115 50%);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  width: min(640px, 92vw);
+  display: grid;
+  gap: 16px;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--panel);
+  border: 1px solid #202634;
+  border-radius: 12px;
+}
+
+.title {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.score {
+  color: var(--muted);
+}
+
+.board-wrap {
+  position: relative;
+  background: var(--panel);
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #202634;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 2px;
+  background: var(--grid);
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.cell {
+  background: #141824;
+  border-radius: 4px;
+}
+
+.cell.snake {
+  background: linear-gradient(135deg, #3bc46e, #58e08b);
+}
+
+.cell.snake.head {
+  outline: 2px solid #7cf5a7;
+}
+
+.cell.food {
+  background: #f05454;
+}
+
+.overlay {
+  position: absolute;
+  inset: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 12, 18, 0.75);
+  border-radius: 12px;
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay-card {
+  background: #101420;
+  border: 1px solid #232a3a;
+  padding: 20px 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.overlay-card h2 {
+  margin: 0 0 8px;
+}
+
+.overlay-card p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+button {
+  background: #2a3245;
+  border: 1px solid #3a435a;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333c52;
+}
+
+.controls {
+  display: grid;
+  gap: 12px;
+  background: var(--panel);
+  border: 1px solid #202634;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.instructions {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.pad {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pad-row {
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  gap: 8px;
+}
+
+.pad-btn {
+  width: 48px;
+  height: 48px;
+}
+
+@media (min-width: 768px) {
+  .pad {
+    display: none;
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div class="title">Snake</div>
+        <div class="score">Score: <span id="score">0</span></div>
+      </header>
+
+      <section class="board-wrap">
+        <div id="board" class="board" aria-label="Snake board" role="grid"></div>
+        <div id="overlay" class="overlay" hidden>
+          <div class="overlay-card">
+            <h2 id="overlay-title">Game Over</h2>
+            <p id="overlay-subtitle">Press Restart to play again.</p>
+            <button id="restart">Restart</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Controls">
+        <div class="instructions">
+          Use Arrow Keys or WASD to move. Space to pause. R to restart.
+        </div>
+        <div class="pad" aria-hidden="false">
+          <button class="pad-btn" data-dir="up">▲</button>
+          <div class="pad-row">
+            <button class="pad-btn" data-dir="left">◀</button>
+            <button class="pad-btn" data-dir="down">▼</button>
+            <button class="pad-btn" data-dir="right">▶</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="snake.js"></script>
+  </body>
+</html>
